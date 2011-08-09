@@ -21,7 +21,7 @@
             document['on' + type + 'move'] = function(e) {
                 moveHandler(e);
                 Cursor.refresh(e);
-            }
+            };
         },
         refresh: function(e) {
             if(!e) {
@@ -164,38 +164,38 @@
         	var self = this;
 
         	this.wrapper.onselectstart = function() {
-        		return false;
-        	}
+                return false;
+            };
         	this.handle.onmousedown = this.handle.ontouchstart = function(e) {
-        		self.handleDownHandler(e);
-        	};
+                self.handleDownHandler(e);
+            };
         	this.wrapper.onmousedown = this.wrapper.ontouchstart = function(e) {
-        		self.wrapperDownHandler(e);
-        	};
+                self.wrapperDownHandler(e);
+            };
         	var mouseUpHandler = document.onmouseup || function(){};
         	document.onmouseup = function(e) {
-        		mouseUpHandler(e);
-        		self.documentUpHandler(e);
-        	};
+                mouseUpHandler(e);
+                self.documentUpHandler(e);
+            };
         	var touchEndHandler = document.ontouchend || function(){};
         	document.ontouchend = function(e) {
-        		touchEndHandler(e);
-        		self.documentUpHandler(e);
-        	};
+                touchEndHandler(e);
+                self.documentUpHandler(e);
+            };
         	var resizeHandler = window.onresize || function(){};
         	window.onresize = function(e) {
-        		resizeHandler(e);
-        		self.documentResizeHandler(e);
-        	};
+                resizeHandler(e);
+                self.documentResizeHandler(e);
+            };
         	this.wrapper.onmousemove = function(e) {
-        		self.activity = true;
-        	}
+                self.activity = true;
+            };
         	this.wrapper.onclick = function(e) {
-        		return !self.activity;
-        	}
+                return !self.activity;
+            };
 
-        	this.interval = setInterval(function(){ self.animate() }, 25);
-        	self.animate(false, true);
+            this.interval = setInterval(function(){ self.animate(); }, 25);
+            self.animate(false, true);
         },
         handleDownHandler: function(e) {
         	this.activity = false;
@@ -481,4 +481,4 @@
     };
 
 context['dragdealer'] = dragdealer;
-}(this)
+}(this);
