@@ -9,5 +9,5 @@
     "url": "https://github.com/tristen/ender-dragdealer.git"
   },
   "main": "./ender.dragdealer.js",
-  "ender": "noop"
+  "ender": "./ender.js"
 }
