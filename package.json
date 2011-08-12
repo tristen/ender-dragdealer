@@ -1,7 +1,7 @@
 {
   "name": "ender-dragdealer",
   "description": "A drag based javascript library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "http://code.ovidiu.ch/dragdealer",
   "authors": ["Ovidiu Chereches", "Tristen Brown <@fallsemo>"],
   "repository": {
