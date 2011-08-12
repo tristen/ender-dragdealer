@@ -1,11 +1,11 @@
 Ender Dragdealer
 -------
 Ender integration for [Ovidiu Chereches](http://ovidiu.ch)' excellent drag based javascript component.  
-__Install__
+__Install:__
 
 `ender add ender-dragdealer.js`
 
-Use it:
+__Use it:__
 
 ``` js
 $('#slide').dragdealer(options);
