@@ -5,7 +5,72 @@
 <title>ender-dragdealer demo</title>
 <script src='ender.dragdealer.js'></script>
 <style type='text/css'>
-
+html, body, div,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+dl, dt, dd, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+  }
+ol, ul {
+	list-style: none;
+  }
+:focus {
+	outline: 0;
+  }
+body {
+  font: 13px/20px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #333;
+  line-height: 1;
+  }
+a {
+  text-decoration: none;
+  color: #1F90FF;
+  font-weight: bold;
+  }
+h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+  letter-spacing: -1px;
+  }
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 20px 0 10px;
+  }
+p {
+  margin: 0 0 10px;
+  }
+pre,
+pre code {
+  font-family: 'Menlo Regular',Consolas,monospace;
+  margin: 0;
+  padding: 0;
+  }
+pre {
+  background: #0f0f0f;
+  font-size: 12px;
+  margin-bottom: 15px;
+  overflow: auto;
+  padding: 10px;
+  color: #666;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  }
+pre:hover {
+  color: #fff;
+  }
+.limiter {
+  width: 800px;
+  margin: 60px auto 0;
+  }
 .rounded-cornered,
 .rounded-cornered .handle {
   border-radius: 3px;
@@ -17,6 +82,7 @@
   width: auto;
   height: 30px;
   background: #EEE;
+  margin: 0 0 10px;
   }
 .dragdealer .handle {
   position: absolute;
@@ -27,8 +93,10 @@
   height: 30px;
   background: #CC0000;
   color: #FFF;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   line-height: 30px;
   text-align: center;
+  font-weight: bold;
   }
 </style>
 </head>
@@ -38,8 +106,16 @@
       dragdealer('simple-slider');
     }
   </script>
-  <div id='simple-slider' class='dragdealer rounded-cornered'>
-    <div class='red-bar handle'>drag me</div>
+  <div class='limiter'>
+    <h1>Ender Dragdealer</h1>
+    <p>Ender integration for <a href='http://ovidiu.ch'>Ovidiu Chereches</a>' excellent drag based javascript component</p>
+
+    <h3>Example</h3>
+    <pre><code>$('#simple-slider')dragdealer();</code></pre>
+    <div id='simple-slider' class='dragdealer rounded-cornered'>
+      <div class='red-bar handle'>drag me</div>
+    </div>
+    <p>See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a></p>
   </div>
 </body>
 </html>
