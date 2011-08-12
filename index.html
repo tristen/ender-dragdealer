@@ -39,9 +39,11 @@ h1 {
   letter-spacing: -1px;
   }
 h3 {
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 18px;
   margin: 20px 0 10px;
+  }
+h3 span {
+  color: #777;
   }
 p {
   margin: 0 0 10px;
@@ -65,7 +67,7 @@ pre {
   transition: all 0.3s ease-out;
   }
 pre:hover {
-  color: #fff;
+  color: #bbb;
   }
 .limiter {
   width: 800px;
@@ -88,6 +90,7 @@ pre:hover {
   position: absolute;
   cursor: pointer;
   }
+.dragdealer .gold-bar,
 .dragdealer .red-bar {
   width: 100px;
   height: 30px;
@@ -98,24 +101,36 @@ pre:hover {
   text-align: center;
   font-weight: bold;
   }
+.dragdealer .gold-bar {
+  background-color: #d19600;
+  }
 </style>
 </head>
 <body>
   <script>
     window.onload = function() {
       dragdealer('simple-slider');
+      $('#ender-slider').dragdealer();
     }
   </script>
   <div class='limiter'>
-    <h1>Ender Dragdealer</h1>
-    <p>Ender integration for <a href='http://ovidiu.ch'>Ovidiu Chereches</a>' excellent drag based javascript component</p>
+    <a href='http://github.com/tristen/ender-dragdealer'><img style='position: absolute; top: 0; right: 0; border: 0;' src='https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67' alt='Fork me on GitHub' /></a>
 
-    <h3>Example</h3>
-    <pre><code>$('#simple-slider')dragdealer();</code></pre>
+    <h1>Ender Dragdealer</h1>
+    <p>Ender integration for <a href='http://ovidiu.ch'>Ovidiu Chereches</a>' excellent drag based javascript component.</p>
+
+    <h3>Example: <span>on it's own</span></h3>
+    <pre><code>dragdealer('simple-slider');</code></pre>
     <div id='simple-slider' class='dragdealer rounded-cornered'>
       <div class='red-bar handle'>drag me</div>
     </div>
-    <p>See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a></p>
+
+    <h3><span>with ender</span></h3>
+    <pre><code>$('#ender-slider').dragdealer();</code></pre>
+    <div id='ender-slider' class='dragdealer rounded-cornered'>
+      <div class='gold-bar handle'>drag me</div>
+    </div>
+    <p>Pass in additional options! See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a>.</p>
   </div>
 </body>
 </html>

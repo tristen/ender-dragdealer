@@ -10,4 +10,4 @@ Use it:
 $('#slide').dragdealer(options);
 ```
 
-See the full API on the [dragdealer homepage](http://code.ovidiu.ch/dragdealer)
+Pass in additional options! See the full API on the [dragdealer homepage](http://code.ovidiu.ch/dragdealer).
