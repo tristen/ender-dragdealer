@@ -1018,9 +1018,7 @@
   !function ($) {
   
       $.ender({
-          dragdealer: function (opt) {
-              return dragdealer(el, opt);
-          }
+        dragdealer: dragdealer
       }, true);
   
   }(ender);
