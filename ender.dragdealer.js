@@ -1,8 +1,9 @@
 /**
- * dragdealer JS v0.9.5
- * http://code.ovidiu.ch/dragdealer-js
+ * Dragdealer JS v0.9.5
+ * http://code.ovidiu.ch/Dragdealer-js
  *
  * Copyright (c) 2010, Ovidiu Chereches
+ * Modified by Tristen Brown
  * MIT License
  * http://legal.ovidiu.ch/licenses/MIT
  */
@@ -26,7 +27,7 @@
         refresh: function(e) {
             if(!e) {
                 e = window.event;
-            } if(e.type == 'mousemove') {
+            } if(e.type === 'mousemove') {
                 this.set(e);
             } else if(e.touches) {
                 this.set(e.touches[0]);
@@ -59,21 +60,22 @@
         }
     };
 
-    /* dragdealer */
-    var dragdealer = function(wrapper, options) {
-    	if(typeof(wrapper) == 'string') {
+    /* Dragdealer */
+    var Dragdealer = function(wrapper, options) {
+        if(typeof(wrapper) === 'string') {
     		wrapper = document.getElementById(wrapper);
     	} if(!wrapper) {
     		return;
     	}
     	var handle = wrapper.getElementsByTagName('div')[0];
-    	if(!handle || handle.className.search(/(^|\s)handle(\s|$)/) == -1) {
+        if(!handle || handle.className.search(/(^|\s)handle(\s|$)/) === -1) {
     		return;
     	}
     	this.init(wrapper, handle, options || {});
     	this.setup();
     };
-    dragdealer.prototype = {
+
+    Dragdealer.prototype = {
         init: function(wrapper, handle, options) {
         	this.wrapper = wrapper;
         	this.handle = handle;
@@ -129,13 +131,11 @@
         	this.offset.wrapper = Position.get(this.wrapper);
         },
         setBoundsPadding: function() {
-        	if(!this.bounds.left && !this.bounds.right)
-        	{
+            if(!this.bounds.left && !this.bounds.right) {
         		this.bounds.left = Position.get(this.handle)[0] - this.offset.wrapper[0];
         		this.bounds.right = -this.bounds.left;
         	}
-        	if(!this.bounds.top && !this.bounds.bottom)
-        	{
+            if(!this.bounds.top && !this.bounds.bottom) {
         		this.bounds.top = Position.get(this.handle)[1] - this.offset.wrapper[1];
         		this.bounds.bottom = -this.bounds.top;
         	}
@@ -211,11 +211,9 @@
         	this.preventDefaults(e, true);
         	this.startTap();
         },
-        documentUpHandler: function(e)
-        {
+        documentUpHandler: function(e) {
         	this.stopDrag();
         	this.stopTap();
-        	//this.cancelEvent(e);
         },
         documentResizeHandler: function(e) {
         	this.setWrapperOffset();
@@ -240,9 +238,8 @@
         },
         setValue: function(x, y, snap) {
         	this.setTargetValue([x, y || 0]);
-        	if(snap)
-        	{
-        		this.groupCopy(this.value.current, this.value.target);
+            if(snap) {
+                this.groupCopy(this.value.current, this.value.target);
         	}
         },
         startTap: function(target) {
@@ -260,8 +257,7 @@
         	this.setTargetOffset(target);
         },
         stopTap: function() {
-        	if(this.disabled || !this.tapping)
-        	{
+            if(this.disabled || !this.tapping) {
         		return;
         	}
         	this.tapping = false;
@@ -301,14 +297,14 @@
         		value = this.getClosestSteps(value);
         	}
         	if(!this.groupCompare(value, this.value.prev)) {
-        		if(typeof(this.animationCallback) == 'function') {
+                if(typeof(this.animationCallback) === 'function') {
         			this.animationCallback(value[0], value[1]);
         		}
         		this.groupCopy(this.value.prev, value);
         	}
         },
         result: function() {
-        	if(typeof(this.callback) == 'function') {
+            if(typeof(this.callback) == 'function') {
         		this.callback(this.value.target[0], this.value.target[1]);
         	}
         },
@@ -437,8 +433,7 @@
         getClosestStep: function(value) {
         	var k = 0;
         	var min = 1;
-        	for(var i = 0; i <= this.steps - 1; i++)
-        	{
+            for(var i = 0; i <= this.steps - 1; i++) {
         		if(Math.abs(this.stepRatios[i] - value) < min) {
         			min = Math.abs(this.stepRatios[i] - value);
         			k = i;
@@ -447,7 +442,7 @@
         	return this.stepRatios[k];
         },
         groupCompare: function(a, b) {
-        	return a[0] == b[0] && a[1] == b[1];
+            return a[0] === b[0] && a[1] === b[1];
         },
         groupCopy: function(a, b) {
         	a[0] = b[0];
@@ -479,6 +474,10 @@
         	e.cancelBubble = true;
         }
     };
+
+    function dragdealer(wrapper, options) {
+        return new Dragdealer(wrapper, options);
+    }
 
 context['dragdealer'] = dragdealer;
 }(this);

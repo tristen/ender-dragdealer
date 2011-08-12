@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>ender-dragdealer demo</title>
+<script src='ender.dragdealer.js'></script>
+<style type='text/css'>
+
+.rounded-cornered,
+.rounded-cornered .handle {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  }
+.dragdealer {
+  position: relative;
+  width: auto;
+  height: 30px;
+  background: #EEE;
+  }
+.dragdealer .handle {
+  position: absolute;
+  cursor: pointer;
+  }
+.dragdealer .red-bar {
+  width: 100px;
+  height: 30px;
+  background: #CC0000;
+  color: #FFF;
+  line-height: 30px;
+  text-align: center;
+  }
+</style>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      dragdealer('simple-slider');
+    }
+  </script>
+  <div id='simple-slider' class='dragdealer rounded-cornered'>
+    <div class='red-bar handle'>drag me</div>
+  </div>
+</body>
+</html>
