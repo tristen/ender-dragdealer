@@ -2,9 +2,9 @@ Ender Dragdealer
 -------
 Ender integration for [Ovidiu Chereches](http://ovidiu.ch)' excellent drag based javascript component.  
   
-__Install:__
+__Build it along with [qwery](http://github.com/ded/qwery):__
 
-`ender add ender-dragdealer.js`
+`ender -b qwery ender-dragdealer.js`
 
 __Use it:__
 
