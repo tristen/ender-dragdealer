@@ -9,7 +9,7 @@ __Build it along with [qwery](http://github.com/ded/qwery):__
 __Use it:__
 
 ``` js
-$('#slide').dragdealer({ // ..options });
+$('#slide').dragdealer({ ...optional options });
 ```
 
-Pass in additional options! See the full API on the [dragdealer homepage](http://code.ovidiu.ch/dragdealer).
+See the full API on the [dragdealer homepage](http://code.ovidiu.ch/dragdealer).
