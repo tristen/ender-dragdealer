@@ -90,8 +90,7 @@ pre:hover {
   position: absolute;
   cursor: pointer;
   }
-.dragdealer .gold-bar,
-.dragdealer .red-bar {
+.dragdealer .bar {
   width: 100px;
   height: 30px;
   background: #CC0000;
@@ -101,7 +100,7 @@ pre:hover {
   text-align: center;
   font-weight: bold;
   }
-.dragdealer .gold-bar {
+.dragdealer .gold {
   background-color: #d19600;
   }
 </style>
@@ -122,15 +121,15 @@ pre:hover {
     <h3>Example: <span>on it's own</span></h3>
     <pre><code>dragdealer('simple-slider');</code></pre>
     <div id='simple-slider' class='dragdealer rounded-cornered'>
-      <div class='red-bar handle'>drag me</div>
+      <div class='red bar handle'>drag me</div>
     </div>
 
     <h3><span>with ender</span></h3>
     <pre><code>$('#ender-slider').dragdealer();</code></pre>
     <div id='ender-slider' class='dragdealer rounded-cornered'>
-      <div class='gold-bar handle'>drag me</div>
+      <div class='gold bar handle'>drag me</div>
     </div>
-    <p>Pass in additional options! See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a>.</p>
+    <p>Pass in additional options! <code>.dragdealer({ // ... options })</code> See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a>.</p>
   </div>
 </body>
 </html>
