@@ -12,4 +12,6 @@ __Use it:__
 $('#slide').dragdealer({ ...optional options });
 ```
 
+__[Demo](http://tristen.ca/ender-dragdealer)__  
+
 See the full API on the [dragdealer homepage](http://code.ovidiu.ch/dragdealer).
