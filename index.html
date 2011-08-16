@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8 />
 <title>ender-dragdealer demo</title>
-<script src='ender.js'></script>
+<script src='ender.min.js'></script>
 <style type='text/css'>
 html, body, div,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -86,6 +86,13 @@ pre:hover {
   background: #EEE;
   margin: 0 0 10px;
   }
+.dragdealer span {
+  color: #bbb;
+  font-weight: bold;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  }
 .dragdealer .handle {
   position: absolute;
   cursor: pointer;
@@ -121,13 +128,13 @@ pre:hover {
     <h3>Example: <span>on it's own</span></h3>
     <pre><code>dragdealer('simple-slider');</code></pre>
     <div id='simple-slider' class='dragdealer rounded-cornered'>
-      <div class='red bar handle'>drag me</div>
+      <div class='red bar handle'>drag me</div><span>or, click and hold me</span>
     </div>
 
     <h3>With ender <span>(ender -b qwery ender-dragdealer)</span></h3>
     <pre><code>$('#ender-slider').dragdealer();</code></pre>
     <div id='ender-slider' class='dragdealer rounded-cornered'>
-      <div class='gold bar handle'>drag me</div>
+      <div class='gold bar handle'>drag me</div><span>or, click and hold me</span>
     </div>
     <p>Pass in additional options! <code>.dragdealer({ // ... options })</code> See the full API on the <a href='http://code.ovidiu.ch/dragdealer'>dragdealer homepage</a>.</p>
   </div>
