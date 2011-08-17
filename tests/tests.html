@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+<head>
+  <title>Dragdealer Tests</title>
+  <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+  <link rel='stylesheet' href='../build/sink/src/sink.css' type='text/css'>
+  <style type='text/css'>
+  #fixtures {
+    position: absolute;
+    top: -9999em;
+  }
+  </style>
+  <script src='../build/sink/src/sink.js'></script>
+  <script src='../build/qwery/qwery.js'></script>
+  <script>
+    var dragdealer = function () {
+      return 'success';
+    };
+  </script>
+  <script src='../ender.dragdealer.js'></script>
+  <script type="text/javascript">
+    var d = dragdealer.noConflict();
+  </script>
+</head>
+<body>
+  <div id='fixtures'>
+    <div id='simple'>
+      <div class='simple-example'></div>
+    </div>
+  </div>
+  <ol id='tests'></ol>
+  <script src='tests.js'></script>
+</body>
+</html>
