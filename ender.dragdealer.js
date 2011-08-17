@@ -479,5 +479,10 @@
         return new Dragdealer(wrapper, options);
     }
 
-context['dragdealer'] = dragdealer;
+    var old = context['dragdealer'];
+    dragdealer.noConflict = function () {
+      context['dragdealer'] = old;
+      return this;
+    };
+    context['dragdealer'] = dragdealer;
 }(this);
