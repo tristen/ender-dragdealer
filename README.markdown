@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/tristen/ender-dragdealer.png)](http://travis-ci.org/tristen/ender-dragdealer)
 Ender Dragdealer
 -------
 Ender integration for [Ovidiu Chereches](http://ovidiu.ch)' excellent drag based javascript component.  
